@@ -12,7 +12,7 @@ const app = express();
 
 
 app.use(cors({
-    origin: 'https://today-q-forntend.vercel.app/', // Replace with your local development URL
+    origin: '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
@@ -31,9 +31,12 @@ app.get("/" , (req, res) => {
     res.send("<h1>Hello </h1>");
     res.end();
 });
+
 app.use('/api/user', userRouter)
 app.use('/api/content', contentRouter)
 app.use('/api/payment', cartRoutesRoute)
+
+app.use()
 
 
 
