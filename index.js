@@ -11,12 +11,11 @@ connectDB();
 const app = express();
 
 
-
 app.use(cors({
-    origin: [],
-    methods: ["GET", "PUT", "DELET", "POST"],
-    credentials: true
-}))
+    origin: 'http://localhost:5173', // Replace with your local development URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
