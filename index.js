@@ -9,7 +9,7 @@ const app = express();
 app.use(cors({
     origin: '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
+    credentials:true
   }));
 
 app.use(express.json())
@@ -29,9 +29,6 @@ app.get("/" , (req, res) => {
 app.use('/api/user', userRouter)
 app.use('/api/content', contentRouter)
 app.use('/api/payment', cartRoutesRoute)
-
-app.use()
-
 
 
 app.listen(process.env.PORT, () => {
