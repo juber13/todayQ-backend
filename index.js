@@ -1,20 +1,15 @@
 import express from 'express'
 import dotenv from 'dotenv';
 import cors from 'cors'
-
 import connectDB from './db/connect.js';
-
-
 dotenv.config({ path: './.env' })
-
 connectDB();
 const app = express();
-
 
 app.use(cors({
     origin: '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    credentials: true
   }));
 
 app.use(express.json())
@@ -22,7 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // import all routes
-
 import userRouter from './routes/userRoutes.js';
 import contentRouter from './routes/contentRoutes.js'
 import cartRoutesRoute from './routes/cartRoutes.js'
