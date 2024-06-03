@@ -12,7 +12,7 @@ const app = express();
 
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your local development URL
+    origin: 'https://today-q-forntend.vercel.app/', // Replace with your local development URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
